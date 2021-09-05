@@ -25,7 +25,7 @@ const Metadata = ({ className, author, date, categories, options = DEFAULT_METAD
       {author && (
         <li className={styles.metadataAuthor}>
           <address>
-            <span class={styles.metadataAuthorLink}>
+            <span className={styles.metadataAuthorLink}>
             {author.avatar && (
               <Image
                 width={author?.avatar?.width}
