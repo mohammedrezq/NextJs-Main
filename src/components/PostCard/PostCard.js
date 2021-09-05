@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 import { postPathBySlug, sanitizeExcerpt } from 'lib/posts';
 
@@ -6,10 +7,13 @@ import Metadata from 'components/Metadata';
 
 import { FaMapPin } from 'react-icons/fa';
 import styles from './PostCard.module.scss';
+import FeaturedImagePost from 'components/FeaturedImage';
 
 const PostCard = ({ post, options = {} }) => {
-  const { title, excerpt, slug, date, author, categories, isSticky = false } = post;
+  const { featuredImage, title, excerpt, slug, date, author, categories, isSticky = false } = post;
   const { excludeMetadata = [] } = options;
+
+  console.log(featuredImage?.sourceUrl);
 
   const metadata = {};
 
@@ -31,6 +35,11 @@ const PostCard = ({ post, options = {} }) => {
     postCardStyle = `${postCardStyle} ${styles.postCardSticky}`;
   }
 
+  const theFeaturedImage = featuredImage
+    ? featuredImage?.sourceUrl
+    : 'http://localhost/newsite/wp-content/uploads/2021/09/5dc6e957-1031-36ee-8d75-a63547300b33.jpg';
+  // const theFeaturedImageAlt = featuredImage.altText;
+
   return (
     <div className={postCardStyle}>
       {isSticky && <FaMapPin aria-label="Sticky Post" />}
@@ -45,6 +54,9 @@ const PostCard = ({ post, options = {} }) => {
         </a>
       </Link>
       <Metadata className={styles.postCardMetadata} {...metadata} />
+      <div className={styles.featuredImageContainer}>
+        <Image width="350" height="250" layout="responsive" src={theFeaturedImage} loading="lazy" blurDataURL="base64" placeholder="blur" />
+      </div>
       {excerpt && (
         <div
           className={styles.postCardContent}
