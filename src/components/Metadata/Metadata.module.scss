@@ -35,6 +35,18 @@
 }
 
 .metadataAuthor {
+
+  .metadataAuthorLink {
+    margin-left: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .metadataAuthoredBy {
+    margin-left: 10px;
+  }
+
   a {
     margin-left: 0.2em;
   }

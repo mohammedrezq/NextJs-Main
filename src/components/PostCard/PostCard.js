@@ -13,8 +13,6 @@ const PostCard = ({ post, options = {} }) => {
   const { featuredImage, title, excerpt, slug, date, author, categories, isSticky = false } = post;
   const { excludeMetadata = [] } = options;
 
-  console.log(featuredImage?.sourceUrl);
-
   const metadata = {};
 
   if (!excludeMetadata.includes('author')) {
@@ -42,20 +40,30 @@ const PostCard = ({ post, options = {} }) => {
 
   return (
     <div className={postCardStyle}>
-      {isSticky && <FaMapPin aria-label="Sticky Post" />}
-      <Link href={postPathBySlug(slug)}>
-        <a>
-          <h3
-            className={styles.postCardTitle}
-            dangerouslySetInnerHTML={{
-              __html: title,
-            }}
-          />
-        </a>
-      </Link>
-      <Metadata className={styles.postCardMetadata} {...metadata} />
       <div className={styles.featuredImageContainer}>
-        <Image width="350" height="250" layout="responsive" src={theFeaturedImage} loading="lazy" blurDataURL="base64" placeholder="blur" />
+        <Image
+          width="350"
+          height="250"
+          layout="responsive"
+          src={theFeaturedImage}
+          loading="lazy"
+          blurDataURL="base64"
+          placeholder="blur"
+        />
+      </div>
+      <div className={styles.headerPostCard}>
+        {isSticky && <FaMapPin aria-label="Sticky Post" />}
+        <Link href={postPathBySlug(slug)}>
+          <a className={styles.postCardTitleLink}>
+            <h3
+              className={styles.postCardTitle}
+              dangerouslySetInnerHTML={{
+                __html: title,
+              }}
+            />
+          </a>
+        </Link>
+        <Metadata className={styles.postCardMetadata} {...metadata} />
       </div>
       {excerpt && (
         <div

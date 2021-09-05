@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 import { categoryPathBySlug } from 'lib/categories';
 import { authorPathByName } from 'lib/users';
@@ -24,18 +25,20 @@ const Metadata = ({ className, author, date, categories, options = DEFAULT_METAD
       {author && (
         <li className={styles.metadataAuthor}>
           <address>
+            <span class={styles.metadataAuthorLink}>
             {author.avatar && (
-              <img
-                width={author.avatar.width}
-                height={author.avatar.height}
-                src={author.avatar.url}
+              <Image
+                width={author?.avatar?.width}
+                height={author?.avatar?.height}
+                src={author?.avatar?.url}
                 alt="Author Avatar"
               />
-            )}
-            By{' '}
-            <Link href={authorPathByName(author.name)}>
-              <a rel="author">{author.name}</a>
-            </Link>
+              )}
+              </span>
+              <span className={styles.metadataAuthoredBy}>كُتب</span> 
+              <Link href={authorPathByName(author.name)}>
+                <a rel="author">{author.name}</a>
+              </Link>
           </address>
         </li>
       )}
