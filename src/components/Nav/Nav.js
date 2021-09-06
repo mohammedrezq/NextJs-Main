@@ -245,9 +245,9 @@ const Nav = () => {
                   <ul>
                     {results.map(({ slug, title }, index) => {
                       return (
-                        <li key={slug}>
+                        <li className={styles.singleSearchResult} key={slug}>
                           <Link tabIndex={index} href={postPathBySlug(slug)}>
-                            <a>{title}</a>
+                            <a className={styles.searchResultLink}>{title}</a>
                           </Link>
                         </li>
                       );

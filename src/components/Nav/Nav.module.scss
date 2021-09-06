@@ -170,14 +170,29 @@
   display: none;
   position: absolute;
   top: 100%;
-  right: 0;
+  right: -320px;
   width: 100vw;
   background-color: white;
-  padding: 1.5em;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
   border-top: solid 5px $color-primary;
   margin-right: -1rem;
   z-index: 999;
+
+  .singleSearchResult {
+    font-weight: 600;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    
+    .searchResultLink {
+      padding: 1.2rem 0.5rem;
+      &:hover, &:active {
+        background-color: #000;
+        color: #fff;
+      }
+      
+    }
+  }
 
   @media (min-width: 480px) {
     width: 30em;
@@ -196,15 +211,13 @@
   ul {
     list-style: none;
     padding: 0;
-    margin: -0.5em 0;
+    margin-bottom: 0;
   }
 
   a {
     display: block;
     color: $color-gray-800;
     text-decoration: none;
-    padding: 0.5em;
-    margin: 0 -0.5em;
     &:focus {
       outline: 2px solid $color-blue-500;
     }
