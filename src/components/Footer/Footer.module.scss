@@ -3,14 +3,18 @@
 .footer {
   width: 100%;
   border-top: 1px solid $color-gray-100;
+  margin-top: 20px;
 }
 
 .footerMenu {
-  margin: 2rem 0;
+  // margin: 2rem 0;
+  background-color: $color-gray-900;
 
   ul {
     list-style: none;
     padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
   }
 }
 
@@ -32,10 +36,13 @@
 
 .footerMenuTitle {
   display: inline-block;
-  color: $color-gray-800;
+  color: $color-gray-200;
+  font-size: 1.6rem;
+  font-family: $font-family-heading;
   text-decoration: none;
   margin-bottom: 1.4em;
   margin-top: 0;
+  padding: 0 !important;
 }
 
 .footerMenuItems {
@@ -50,14 +57,15 @@
   a {
     display: block;
     overflow: hidden;
-    color: $color-gray-600;
+    // color: $color-gray-600;
+    color: $color-gray-50;
     text-decoration: none;
     white-space: nowrap;
     text-overflow: ellipsis;
 
     @media (hover: hover) {
       &:hover {
-        color: $color-primary;
+        // color: $color-primary;
         text-decoration: underline;
       }
     }
@@ -65,8 +73,9 @@
 }
 
 .footerLegal {
-  color: $color-gray-400;
+  color: $color-gray-50;
   background-color: $color-gray-900;
+  border-top: 1px solid #838383;
   padding: 0.8rem 0;
   margin: 0;
 
@@ -74,5 +83,37 @@
     font-size: 0.9em;
     text-align: center;
     margin: 0;
+  }
+}
+
+
+@media (max-width: 880px) {
+
+  
+  .footerMenu {
+
+    ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+
+  .footerMenuColumns {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  
+    @media (min-width: 480px) {
+      justify-content: center;
+    }
+  
+    & > li {
+      min-width: 100%;
+      padding: 0 2rem;
+      text-align: center;
+    }
   }
 }
