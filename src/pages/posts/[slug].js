@@ -18,6 +18,7 @@ import Metadata from 'components/Metadata';
 import FeaturedImage from 'components/FeaturedImage';
 
 import styles from 'styles/pages/Post.module.scss';
+import HeaderSingle from 'components/HeaderSingle';
 
 export default function Post({ post, socialImage, relatedPosts }) {
   const {
@@ -72,7 +73,7 @@ export default function Post({ post, socialImage, relatedPosts }) {
 
       <ArticleJsonLd post={post} siteTitle={siteMetadata.title} />
 
-      <Header>
+      <HeaderSingle color="#fff0e1">
         {featuredImage && (
           <FeaturedImage
             {...featuredImage}
@@ -94,7 +95,7 @@ export default function Post({ post, socialImage, relatedPosts }) {
           options={metadataOptions}
           isSticky={isSticky}
         />
-      </Header>
+      </HeaderSingle>
 
       <Content>
         <Section>

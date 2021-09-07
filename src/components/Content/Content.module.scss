@@ -21,4 +21,11 @@
     display: block;
     margin: 0 auto;
   }
+
+  figure {
+    img {
+      padding: 0;
+      border: none;
+    }
+  }
 }

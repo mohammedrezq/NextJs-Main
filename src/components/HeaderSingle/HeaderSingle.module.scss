@@ -1,0 +1,46 @@
+@import "styles/settings/__settings";
+
+@import "styles/components/_container";
+
+.header {
+  margin: 0 0 2rem 0;
+  // background: #fff0e1;
+  border-bottom: 1px solid #000;
+
+  h1 {
+    margin: 0;
+    line-height: 1.15;
+    font-size: 3rem;
+    text-align: center;
+
+    @media (min-width: 480px) {
+      font-size: 4rem;
+    }
+
+    a {
+      color: $color-primary;
+      text-decoration: none;
+
+      &:hover,
+      &:focus,
+      &:active {
+        text-decoration: underline;
+      }
+    }
+
+    & + ul {
+      margin-top: 1.5em;
+    }
+  }
+
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  figure {
+    margin-left: -2rem;
+    margin-right: -2rem;
+  }
+}

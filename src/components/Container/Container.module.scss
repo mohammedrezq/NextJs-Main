@@ -2,8 +2,20 @@
 
 .container {
   // max-width: 60rem;
-  padding: 0 2rem;
+  padding: 0;
   margin: 0 auto;
-  font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
+  p {
+    padding: 0 1.2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    // max-width: 60rem;
+    padding: 0 2rem;
+    margin: 0 auto;
+    font-weight: 400;
+    font-size: 20px;
+  }
 }
