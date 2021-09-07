@@ -40,6 +40,8 @@ const PostCard = ({ post, options = {} }) => {
 
   return (
     <div className={postCardStyle}>
+      <Link href={postPathBySlug(slug)}>
+          <a>
       <div className={styles.featuredImageContainer}>
         <Image
           width="350"
@@ -50,7 +52,7 @@ const PostCard = ({ post, options = {} }) => {
           blurDataURL="base64"
           placeholder="blur"
         />
-      </div>
+      </div></a></Link>
       <div className={styles.headerPostCard}>
         {isSticky && <FaMapPin aria-label="Sticky Post" />}
         <Link href={postPathBySlug(slug)}>
