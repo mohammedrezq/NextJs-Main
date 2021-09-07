@@ -27,7 +27,7 @@ const Footer = () => {
                 <li>
                   <Link href="/posts/">
                     <a className={styles.footerMenuTitle}>
-                      <strong>Recent Posts</strong>
+                      <strong>آخر المشاركات</strong>
                     </a>
                   </Link>
                   <ul className={styles.footerMenuItems}>
@@ -48,7 +48,7 @@ const Footer = () => {
                 <li>
                   <Link href="/categories/">
                     <a className={styles.footerMenuTitle}>
-                      <strong>Categories</strong>
+                      <strong>التصنيفات</strong>
                     </a>
                   </Link>
                   <ul className={styles.footerMenuItems}>
@@ -67,7 +67,7 @@ const Footer = () => {
               )}
               <li>
                 <p className={styles.footerMenuTitle}>
-                  <strong>More</strong>
+                  <strong>المزيد</strong>
                 </p>
                 <ul className={styles.footerMenuItems}>
                   <li>
