@@ -25,7 +25,7 @@ const Footer = () => {
             <ul className={styles.footerMenuColumns}>
               {hasRecentPosts && (
                 <li>
-                  <Link href="/posts/">
+                  <Link href="/blog/">
                     <a className={styles.footerMenuTitle}>
                       <strong>آخر المشاركات</strong>
                     </a>

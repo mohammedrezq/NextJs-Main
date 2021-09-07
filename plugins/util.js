@@ -258,8 +258,8 @@ function generateFeed({ posts = [], metadata = {} }) {
   posts.map((post) => {
     feed.item({
       title: post.title,
-      guid: `${homepage}/posts/${post.slug}`,
-      url: `${homepage}/posts/${post.slug}`,
+      guid: `${homepage}/blog/${post.slug}`,
+      url: `${homepage}/blog/${post.slug}`,
       date: post.date,
       description: post.excerpt,
       author: post.author,
@@ -323,7 +323,7 @@ function generateSitemap({ posts = [], pages = [] }) {
           ${posts
             .map((post) => {
               return `<url>
-                        <loc>${homepage}/posts/${post.slug}</loc>
+                        <loc>${homepage}/blog/${post.slug}</loc>
                         <lastmod>${new Date(post.modified).toISOString()}</lastmod>
                       </url>
                   `;
