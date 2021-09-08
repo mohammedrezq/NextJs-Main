@@ -30,7 +30,7 @@
 
   & > li {
     max-width: 15em;
-    margin: 2em;
+    margin: 2rem 0;
   }
 }
 
@@ -111,7 +111,7 @@
     }
   
     & > li {
-      min-width: 100%;
+      max-width: 99%;
       padding: 0 2rem;
       text-align: center;
     }

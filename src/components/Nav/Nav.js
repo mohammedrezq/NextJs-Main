@@ -185,15 +185,18 @@ const Nav = () => {
         </p>
         <ul className={styles.navMenu}>
           {navigation?.map(({ id, path, label, title, target, children }) => {
+            const newPath = path.split('/');
+            const articleType = newPath.includes('articles');
+            const thePath = articleType ? `/${newPath[2]}/${newPath[3]}` : `/${newPath[2]}`;
             return (
               <li key={id}>
-                {!path.includes('http') && !target && (
-                  <Link href={path}>
+                {!thePath.includes('http') && !target && (
+                  <Link href={thePath}>
                     <a title={title}>{label}</a>
                   </Link>
                 )}
-                {path.includes('http') && (
-                  <a href={path} title={title} target={target}>
+                {thePath.includes('http') && (
+                  <a href={thePath} title={title} target={target}>
                     {label}
                   </a>
                 )}
@@ -201,15 +204,18 @@ const Nav = () => {
                 {children?.length > 0 && (
                   <ul className={styles.navSubMenu}>
                     {children.map(({ id, path, label, title, target }) => {
+                      const newPath = path.split('/');
+                      const articleType = newPath.includes('articles');
+                      const thePath = articleType ? `/${newPath[2]}/${newPath[3]}` : `/${newPath[2]}`;
                       return (
                         <li key={id}>
-                          {!path.includes('http') && !target && (
-                            <Link href={path}>
+                          {!thePath.includes('http') && !target && (
+                            <Link href={thePath}>
                               <a title={title}>{label}</a>
                             </Link>
                           )}
-                          {path.includes('http') && (
-                            <a href={path} title={title} target={target}>
+                          {thePath.includes('http') && (
+                            <a href={thePath} title={title} target={target}>
                               {label}
                             </a>
                           )}
