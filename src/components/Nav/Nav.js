@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useCallback } from 'react';
+import { useEffect, useRef, useState, useCallback, Fragment } from 'react';
 import Link from 'next/link';
 import { FaSearch } from 'react-icons/fa';
 
@@ -10,6 +10,7 @@ import { findMenuByLocation, MENU_LOCATION_NAVIGATION_DEFAULT } from 'lib/menus'
 import Section from 'components/Section';
 
 import styles from './Nav.module.scss';
+import Dropdown from 'components/Dropdown';
 
 const SEARCH_VISIBLE = 'visible';
 const SEARCH_HIDDEN = 'hidden';
@@ -18,6 +19,9 @@ const Nav = () => {
   const formRef = useRef();
 
   const [searchVisibility, setSearchVisibility] = useState(SEARCH_HIDDEN);
+
+  // const [closeSubMenu, setCloseSubMenu] = useState(true);
+
 
   const { metadata = {}, menus } = useSite();
   const { title } = metadata;
@@ -183,51 +187,7 @@ const Nav = () => {
             <a>{title}</a>
           </Link>
         </p>
-        <ul className={styles.navMenu}>
-          {navigation?.map(({ id, path, label, title, target, children }) => {
-            const newPath = path.split('/');
-            const articleType = newPath.includes('articles');
-            const thePath = articleType ? `/${newPath[2]}/${newPath[3]}` : `/${newPath[2]}`;
-            return (
-              <li key={id}>
-                {!thePath.includes('http') && !target && (
-                  <Link href={thePath}>
-                    <a title={title}>{label}</a>
-                  </Link>
-                )}
-                {thePath.includes('http') && (
-                  <a href={thePath} title={title} target={target}>
-                    {label}
-                  </a>
-                )}
-
-                {children?.length > 0 && (
-                  <ul className={styles.navSubMenu}>
-                    {children.map(({ id, path, label, title, target }) => {
-                      const newPath = path.split('/');
-                      const articleType = newPath.includes('articles');
-                      const thePath = articleType ? `/${newPath[2]}/${newPath[3]}` : `/${newPath[2]}`;
-                      return (
-                        <li key={id}>
-                          {!thePath.includes('http') && !target && (
-                            <Link href={thePath}>
-                              <a title={title}>{label}</a>
-                            </Link>
-                          )}
-                          {thePath.includes('http') && (
-                            <a href={thePath} title={title} target={target}>
-                              {label}
-                            </a>
-                          )}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                )}
-              </li>
-            );
-          })}
-        </ul>
+        <Dropdown />
         <div className={styles.navSearch}>
           {searchVisibility === SEARCH_HIDDEN && (
             <button onClick={handleOnToggleSearch} disabled={!searchIsLoaded}>

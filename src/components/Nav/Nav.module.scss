@@ -71,15 +71,7 @@
     &:last-child {
       margin-right: 0;
     }
-    &:hover {
-      & > a {
-        color: $color-primary;
-      }
 
-      .navSubMenu {
-        display: block;
-      }
-    }
   }
 
   a {
