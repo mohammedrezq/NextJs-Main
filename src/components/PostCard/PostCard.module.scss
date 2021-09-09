@@ -7,12 +7,32 @@
   text-align: left;
   text-decoration: none;
   // border: 1px solid #ccc;
-  background-color: #e7e7e729;
-  border-radius: 0 0 20px 20px;
+  background-color: #fff;
+  border-radius: 8px;
   height: 100%;
+  border: 1px solid #ccc;
+  transition: 0.2s ease-in-out;
+    // top: 0;
+  // left: 0;
+  // transition: top ease 2s;
 
   &:hover {
-    background-color: #ffffff29
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transform: translateY(-8px);
+    transform: scale(1.01);
+  }
+
+  & div {
+    border-radius: 8px 8px 0 0;
+
+    &:hover {
+      box-shadow: 8px 8px 0 8px rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+
+    & img {
+      border-radius: 8px 8px 0 0;
+    }
   }
 
   .headerPostCard {
@@ -46,7 +66,7 @@
     align-items: center;
     min-height: 120px;
     text-align: right;
-    
+
     &:hover {
       h3 {
         color: #005d9b;
@@ -95,4 +115,30 @@
 
 .postCardMetadata {
   margin: -0.8em -0.8em 0.4em;
+}
+
+@media screen and(max-width: 1004px) {
+  .postCard {
+    position: relative;
+    // padding: 1.2em;
+    color: #000000;
+    text-align: left;
+    text-decoration: none;
+    // border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 8px;
+    height: 100%;
+    border: 1px solid #ccc;
+    // transition: 0.2s ease-in-out;
+      // top: 0;
+    // left: 0;
+    // transition: top ease 2s;
+  
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      transform: translateY(0);
+      transform: scale(1);
+    }
+  }
+  
 }
