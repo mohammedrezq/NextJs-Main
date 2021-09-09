@@ -86,7 +86,7 @@ const DropdownMobile = () => {
             <Accordion key={index} className={`${classes.expanded} ${classes.backgroundColorAccordion}  ${classes.accordionBorderRadius}`}>
               <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
                 {!thePath.includes('http') && !target && (
-                  <Typography className={classes.heading}>
+                  <div className={classes.heading}>
                     <Link href={thePath}>
                       <a className={classes.hrefColor} title={title}>{label}</a>
                     </Link>
@@ -95,11 +95,11 @@ const DropdownMobile = () => {
                         {label}
                       </a>
                     )}
-                  </Typography>
+                  </div>
                 )}
               </AccordionSummary>
               <AccordionDetails className={`${classes.backgroundColorAccordionDetails}`}>
-                <Typography>
+                <div>
                   {children?.length > 0 &&
                     children.map(({ id, path, label, title, target }) => {
                       const newPath = path.split('/');
@@ -120,7 +120,7 @@ const DropdownMobile = () => {
                         </div>
                       );
                     })}
-                </Typography>
+                </div>
               </AccordionDetails>
             </Accordion>
           );
