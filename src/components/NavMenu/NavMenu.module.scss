@@ -1,0 +1,9 @@
+.NavMenu {
+  display: flex;
+}
+
+@media screen and (max-width: 900px) {
+  .NavMenu {
+    display: none;
+  }
+}

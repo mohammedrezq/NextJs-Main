@@ -14,17 +14,14 @@
     "lint:no-path": "eslint",
     "start": "next start -p ${PORT:=6060}"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "**/*.js": "yarn format:no-path",
     "**/*.scss": "yarn prettier --write"
   },
   "dependencies": {
     "@apollo/client": "^3.4.7",
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
     "date-fns": "^2.23.0",
     "dotenv": "^10.0.0",
     "fabric": "^4.5.1",

@@ -4,7 +4,7 @@ import { FaSearch, FaChevronDown } from 'react-icons/fa';
 
 
 import useSite from 'hooks/use-site';
-import styles from './Dropdonw.module.scss';
+import styles from './Dropdown.module.scss';
 import { findMenuByLocation, MENU_LOCATION_NAVIGATION_DEFAULT } from 'lib/menus';
 
 const Dropdown = () => {
