@@ -1,0 +1,53 @@
+@import "styles/settings/__settings";
+
+.NavMenuMobile {
+  display: none;
+}
+
+.HamburgerMenu {
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  .NavMenuMobile {
+    display: flex;
+    background-color: transparent;
+    color: $color-gray-500;
+
+    .mobileMenu {
+      background-color: $color-gray-50;
+
+      & ul {
+        position: absolute;
+        left: 150px;
+        top: 61px;
+        right: 0;
+        background: #ccc;
+        width: 100%;
+
+        & ul {
+          left: 150px;
+          top: 44px;
+          right: 0;
+          background: rgb(126, 126, 126);
+          width: 100%;
+        }
+      }
+    }
+    .HamburgerMenu {
+      display: block;
+      height: 40px;
+      width: 40px;
+    }
+    .MobileNavMenu {
+      position: absolute;
+
+      &.MobileMenuActive {
+        display: flex;
+      }
+
+      &.MobileMenuInactive {
+        display: none;
+      }
+    }
+  }
+}

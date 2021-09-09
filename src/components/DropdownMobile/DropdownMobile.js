@@ -4,10 +4,10 @@ import { FaSearch, FaChevronDown } from 'react-icons/fa';
 
 
 import useSite from 'hooks/use-site';
-import styles from './Dropdown.module.scss';
+import styles from './DropdownMobile.module.scss';
 import { findMenuByLocation, MENU_LOCATION_NAVIGATION_DEFAULT } from 'lib/menus';
 
-const Dropdown = () => {
+const DropdownMobile = () => {
   const [subMenu, setSubMenu] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
   const subMenuRef = useRef(null);
@@ -102,4 +102,4 @@ const Dropdown = () => {
   );
 };
 
-export default Dropdown;
+export default DropdownMobile;

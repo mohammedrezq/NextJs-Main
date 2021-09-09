@@ -1,0 +1,10 @@
+.NavMenu {
+  display: flex;
+  background-color: yellowgreen;
+}
+
+@media screen and (max-width: 900px) {
+  .NavMenu {
+    display: none;
+  }
+}

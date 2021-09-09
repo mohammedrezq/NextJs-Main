@@ -11,6 +11,8 @@ import Section from 'components/Section';
 
 import styles from './Nav.module.scss';
 import Dropdown from 'components/Dropdown';
+import NavMenu from 'components/NavMenu/NavMenu';
+import NavMenuMobile from 'components/NavMenu/NavMenuMobile';
 
 const SEARCH_VISIBLE = 'visible';
 const SEARCH_HIDDEN = 'hidden';
@@ -187,7 +189,8 @@ const Nav = () => {
             <a>{title}</a>
           </Link>
         </p>
-        <Dropdown />
+        <NavMenu />
+        <NavMenuMobile />
         <div className={styles.navSearch}>
           {searchVisibility === SEARCH_HIDDEN && (
             <button onClick={handleOnToggleSearch} disabled={!searchIsLoaded}>
