@@ -48,7 +48,7 @@ const PostCard = ({ post, options = {} }) => {
               height="250"
               layout="responsive"
               src={theFeaturedImage}
-              blurDataURL={`/_next/image?url=${theFeaturedImage}&w=4&q=1`}
+              blurDataURL={`/_next/image?url=${theFeaturedImage}&w=16&q=1`}
               placeholder="blur"
               loading="lazy"
             />
