@@ -15,6 +15,13 @@
 
     .mobileMenu {
       background-color: $color-gray-50;
+      background-color: #eef0f3;
+      min-width: 100%;
+      position: absolute;
+      left: 0;
+      top: 61px;
+      z-index: 100;
+      height: 100%;
 
       & ul {
         position: absolute;
@@ -37,6 +44,10 @@
       display: block;
       height: 40px;
       width: 40px;
+      cursor: pointer;
+    }
+    .closeMenu {
+      cursor: pointer;
     }
     .MobileNavMenu {
       position: absolute;

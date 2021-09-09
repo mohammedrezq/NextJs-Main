@@ -221,3 +221,11 @@
     }
   }
 }
+
+@media screen and (max-width: 900px) {
+  .nav {
+    position: fixed;
+    z-index: 102;
+    background: #fff;
+  }
+}

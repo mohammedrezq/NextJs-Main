@@ -23,7 +23,7 @@ const NavMenuMobile = () => {
   return (
     <div className={styles.NavMenuMobile}>
       {!mobileMenuActive && <GiHamburgerMenu className={styles.HamburgerMenu} onClick={mobileMenuActivateHandler} />}
-      {mobileMenuActive && <GrClose onClick={mobileMenuCloseHandler} />}
+      {mobileMenuActive && <GrClose className={styles.closeMenu} onClick={mobileMenuCloseHandler} />}
       {mobileMenuActive && (
         <div className={styles.mobileMenu}>
           <DropdownMobile className={`${styles.MobileNavMenu}`} />
