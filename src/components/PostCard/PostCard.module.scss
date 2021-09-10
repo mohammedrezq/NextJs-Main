@@ -139,3 +139,38 @@
   }
   
 }
+
+@media screen and (max-width: 768px) {
+  .postCard {
+    position: relative;
+    // padding: 1.2em;
+    color: #000000;
+    text-align: left;
+    text-decoration: none;
+    // border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 0;
+    height: 100%;
+    border: 1px solid #ddd;
+    transition: none;
+      // top: 0;
+    // left: 0;
+    // transition: top ease 2s;
+  
+    &:hover, &:active {
+      box-shadow: none;
+      transform: none;
+      background-color: lighten($color-gray-50, 5%);
+    }
+  
+    & div {
+      border-radius: 0;
+  
+  
+  
+      & img {
+        border-radius: 0;
+      }
+    }
+  }
+}
