@@ -10,7 +10,7 @@ import { FaMapPin } from 'react-icons/fa';
 import styles from './Metadata.module.scss';
 
 const DEFAULT_METADATA_OPTIONS = {
-  compactCategories: true,
+  compactCategories: false,
 };
 
 const Metadata = ({ className, author, date, categories, options = DEFAULT_METADATA_OPTIONS, isSticky = false }) => {
@@ -22,7 +22,7 @@ const Metadata = ({ className, author, date, categories, options = DEFAULT_METAD
 
   return (
     <ul className={metadataClassName.toString()}>
-      {author && (
+      {/* {author && (
         <li className={styles.metadataAuthor}>
           <address>
             <span className={styles.metadataAuthorLink}>
@@ -41,9 +41,9 @@ const Metadata = ({ className, author, date, categories, options = DEFAULT_METAD
               </Link>
           </address>
         </li>
-      )}
+      )} */}
       {date && (
-        <li>
+        <li className={styles.metadataDate}>
           <time pubdate="pubdate" dateTime={date}>
             {formatDate(date)}
           </time>

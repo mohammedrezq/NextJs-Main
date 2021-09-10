@@ -31,6 +31,7 @@
   }
 
   & > li {
+    position: relative;
     margin: 0 0.25em;
 
     &:first-child {
@@ -43,12 +44,16 @@
 
     .navSubMenuClosed {
       display: none;
+      width: max-content;
     }
 
     .navSubMenu {
       display: block;
+      width: max-content;
+      left: 8px;
+      z-index: 10;
+      background: #000000d9;
     }
-
   }
 
   a {
@@ -73,7 +78,7 @@
   list-style: none;
   background-color: #fff;
   padding: 0.5em;
-  border-radius: $border-radius-small;
+  border-radius: 0;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   margin-left: -0.25em;
 
@@ -81,6 +86,13 @@
     a {
       font-size: 1rem;
       padding: 0.3em;
+      color: #fff;
+
+      @media (hover: hover) {
+        &:hover {
+          color: rgb(201, 201, 201);
+        }
+      }
     }
   }
 }

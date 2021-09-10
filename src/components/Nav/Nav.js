@@ -18,13 +18,33 @@ import DarkModeToggle from 'components/DarkMode/DarkModeToggle';
 const SEARCH_VISIBLE = 'visible';
 const SEARCH_HIDDEN = 'hidden';
 
-const Nav = () => {
+const Nav = ({ children, sticky = false, className, ...rest }) => {
+  const [isSticky, setIsSticky] = useState(false);
+
   const formRef = useRef();
+
+
+  // Add Sticky Header (Nav)
+  const ref = useRef();
+
+  // mount
+  useEffect(() => {
+    const cachedRef = ref.current,
+      observer = new IntersectionObserver(([e]) => setIsSticky(e.intersectionRatio < 1), { threshold: [1] });
+
+    observer.observe(cachedRef);
+
+    // unmount
+    return function () {
+      observer.unobserve(cachedRef);
+    };
+  }, []);
+
+  // End of Adding Sticky Header
 
   const [searchVisibility, setSearchVisibility] = useState(SEARCH_HIDDEN);
 
   // const [closeSubMenu, setCloseSubMenu] = useState(true);
-
 
   const { metadata = {}, menus } = useSite();
   const { title } = metadata;
@@ -183,7 +203,7 @@ const Nav = () => {
   }, []);
 
   return (
-    <nav className={styles.nav}>
+    <nav className={`${styles.nav} ${isSticky && styles.StickyNav}`} ref={ref}>
       <Section className={styles.navSection}>
         <p className={styles.navName}>
           <Link href="/">
