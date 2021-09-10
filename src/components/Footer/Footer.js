@@ -8,6 +8,7 @@ import Section from 'components/Section';
 import Container from 'components/Container';
 
 import styles from './Footer.module.scss';
+import FooterContainer from 'components/FooterContainer';
 
 const Footer = () => {
   const { metadata = {}, recentPosts = [], categories = [] } = useSite();
@@ -21,7 +22,7 @@ const Footer = () => {
     <footer className={styles.footer}>
       {hasMenu && (
         <Section className={styles.footerMenu}>
-          <Container>
+          <FooterContainer>
             <ul className={styles.footerMenuColumns}>
               {hasRecentPosts && (
                 <li>
@@ -83,16 +84,16 @@ const Footer = () => {
                 </ul>
               </li>
             </ul>
-          </Container>
+          </FooterContainer>
         </Section>
       )}
 
       <Section className={styles.footerLegal}>
-        <Container>
+        <FooterContainer>
           <p>
             &copy; {new Date().getFullYear()} {title}
           </p>
-        </Container>
+        </FooterContainer>
       </Section>
     </footer>
   );
