@@ -7,12 +7,12 @@
   "scripts": {
     "build": "next build && next export",
     "wpe-build": "npm run build",
-    "dev": "next -p 6060",
+    "dev": "next",
     "format": "yarn lint --fix",
     "format:no-path": "yarn lint:no-path --fix",
     "lint": "eslint .",
     "lint:no-path": "eslint",
-    "start": "next start -p ${PORT:=6060}"
+    "start": "next start -p ${PORT:=3000}"
   },
   "lint-staged": {
     "**/*.js": "yarn format:no-path",

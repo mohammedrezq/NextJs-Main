@@ -10,7 +10,7 @@ module.exports = withPlugins([[indexSearch], [feed], [sitemap], [socialImages]],
   // to include is by default, the `path` property of the router for the homepage
   // is `/` and by using that, would instantly create a redirect
 
-  trailingSlash: true,
+  trailingSlash: false,
 
   // By enabling verbose logging, it will provide additional output details for
   // diagnostic purposes. By default is set to false.
@@ -43,7 +43,7 @@ module.exports = withPlugins([[indexSearch], [feed], [sitemap], [socialImages]],
     localeDetection: true,
     domains: [
       {
-        domain: 'localhost',
+        domain: 'http://localhost/',
         defaultLocale: 'ar',
       },
     ],
