@@ -33,6 +33,7 @@ export default class MyDocument extends Document {
       <Html dir="rtl" {...this.helmetHtmlAttrComponents}>
         <Head>{this.helmetHeadComponents}</Head>
         <body {...this.helmetBodyAttrComponents}>
+          <script src="noflash.js" />
           <Main />
           <NextScript />
         </body>

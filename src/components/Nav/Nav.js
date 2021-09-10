@@ -13,6 +13,7 @@ import styles from './Nav.module.scss';
 import Dropdown from 'components/Dropdown';
 import NavMenu from 'components/NavMenu/NavMenu';
 import NavMenuMobile from 'components/NavMenu/NavMenuMobile';
+import DarkModeToggle from 'components/DarkMode/DarkModeToggle';
 
 const SEARCH_VISIBLE = 'visible';
 const SEARCH_HIDDEN = 'hidden';
@@ -202,7 +203,7 @@ const Nav = ({ children, sticky = false, className, ...rest }) => {
   }, []);
 
   return (
-    <nav className={`${styles.nav} ${isSticky && styles.StickyNav}`} ref={ref}>
+    <nav className={`${styles.nav} ${isSticky ? styles.StickyNav + ' sticky-nav': ''}`} ref={ref}>
       <Section className={styles.navSection}>
         <p className={styles.navName}>
           <Link href="/">
@@ -211,6 +212,7 @@ const Nav = ({ children, sticky = false, className, ...rest }) => {
         </p>
         <NavMenu />
         <NavMenuMobile />
+        <DarkModeToggle />
         <div className={styles.navSearch}>
           {searchVisibility === SEARCH_HIDDEN && (
             <button onClick={handleOnToggleSearch} disabled={!searchIsLoaded}>
