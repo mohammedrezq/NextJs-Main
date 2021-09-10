@@ -203,7 +203,7 @@ const Nav = ({ children, sticky = false, className, ...rest }) => {
   }, []);
 
   return (
-    <nav className={`${styles.nav} ${isSticky && styles.StickyNav}`} ref={ref}>
+    <nav className={`${styles.nav} ${isSticky ? styles.StickyNav + ' sticky-nav': ''}`} ref={ref}>
       <Section className={styles.navSection}>
         <p className={styles.navName}>
           <Link href="/">

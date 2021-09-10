@@ -18,10 +18,38 @@ body {
     background-color: #fff;
     color: #000;
     transition: background-color 0.3s ease;
+
+    .sticky-nav {
+      background-color: #fff;
+      color: #000;
+    }
   }
   &.dark-mode {
     background-color: #19191a;
     color: #fff;
+
+    p {
+      a {
+        color: #fff;
+      }
+    }
+    li {
+      a,
+      time {
+        color: #fff;
+      }
+    }
+
+    .sticky-nav {
+      background-color: #19191a;
+      color: #fff;
+
+      // li {
+      //   a {
+      //     color: #fff;
+      //   }
+      // }
+    }
   }
 }
 
