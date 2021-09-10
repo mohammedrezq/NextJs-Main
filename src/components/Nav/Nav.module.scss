@@ -4,6 +4,25 @@
   width: 100%;
   // border-bottom: 1px solid $color-gray-100;
   padding: 0 1rem;
+  transition: 0.2s ease-in;
+
+  &.StickyNav {
+    position: sticky;
+    top: -1px;
+    font-size: 1rem;
+    transition: 0.2s ease-out;
+    background-color: #fff;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 15px;
+    z-index: 500;
+
+    .navName {
+
+      a {
+        font-size: 1.4rem;
+        transition: 0.2s ease-out;
+      }
+    }
+  }
 }
 
 .navSection {
@@ -37,7 +56,7 @@
 
   a {
     color: $color-gray-500;
-    font-size: 1.2rem;
+    font-size: 2rem;
     font-weight: bold;
     text-decoration: none;
     border-bottom: solid 2px transparent;
@@ -71,7 +90,6 @@
     &:last-child {
       margin-right: 0;
     }
-
   }
 
   a {
@@ -80,6 +98,7 @@
     color: $color-gray-600;
     font-size: 1.1em;
     padding: 0.5em;
+    transition: 0.2s ease-in;
 
     @media (hover: hover) {
       &:hover {
@@ -173,16 +192,16 @@
   .singleSearchResult {
     font-weight: 600;
     font-size: 18px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
-    
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
     .searchResultLink {
       padding: 1.2rem 0.5rem;
-      &:hover, &:active, &:focus {
+      &:hover,
+      &:active,
+      &:focus {
         background-color: #000;
         color: #fff;
       }
-      
     }
   }
 

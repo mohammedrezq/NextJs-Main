@@ -1,5 +1,12 @@
 .NavMenu {
   display: flex;
+
+  .NavSticky {
+    position: sticky;
+    top: -1px;
+    // font-size: 3em;
+    transition: 0.2s ease-out;
+  }
 }
 
 @media screen and (max-width: 900px) {
