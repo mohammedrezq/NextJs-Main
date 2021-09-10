@@ -43,7 +43,7 @@ const Metadata = ({ className, author, date, categories, options = DEFAULT_METAD
         </li>
       )} */}
       {date && (
-        <li>
+        <li className={styles.metadataDate}>
           <time pubdate="pubdate" dateTime={date}>
             {formatDate(date)}
           </time>
