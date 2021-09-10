@@ -13,6 +13,7 @@ import styles from './Nav.module.scss';
 import Dropdown from 'components/Dropdown';
 import NavMenu from 'components/NavMenu/NavMenu';
 import NavMenuMobile from 'components/NavMenu/NavMenuMobile';
+import DarkModeToggle from 'components/DarkMode/DarkModeToggle';
 
 const SEARCH_VISIBLE = 'visible';
 const SEARCH_HIDDEN = 'hidden';
@@ -191,6 +192,7 @@ const Nav = () => {
         </p>
         <NavMenu />
         <NavMenuMobile />
+        <DarkModeToggle />
         <div className={styles.navSearch}>
           {searchVisibility === SEARCH_HIDDEN && (
             <button onClick={handleOnToggleSearch} disabled={!searchIsLoaded}>
