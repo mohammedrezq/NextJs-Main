@@ -51,8 +51,9 @@
       display: block;
       width: max-content;
       left: 8px;
+      z-index: 10;
+      background: #000000d9;
     }
-
   }
 
   a {
@@ -85,6 +86,13 @@
     a {
       font-size: 1rem;
       padding: 0.3em;
+      color: #fff;
+
+      @media (hover: hover) {
+        &:hover {
+          color: rgb(201, 201, 201);
+        }
+      }
     }
   }
 }

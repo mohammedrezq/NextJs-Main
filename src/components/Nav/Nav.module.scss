@@ -178,7 +178,7 @@
     
     .searchResultLink {
       padding: 1.2rem 0.5rem;
-      &:hover, &:active {
+      &:hover, &:active, &:focus {
         background-color: #000;
         color: #fff;
       }
